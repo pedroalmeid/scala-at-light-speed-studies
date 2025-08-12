@@ -62,6 +62,44 @@ object Functional extends App {
     letter <- List('a', 'b', 'c')
   } yield s"$number-$letter"
 
+  // More about collections
 
+  // Adding elements to lists
+  val numbersList = List(1,2,3,4,5)
+  val extendedList = 0 +: numbersList :+ 6 // Prepending and appending elements
+  println(extendedList) // List(0,1,2,3,4,5,6)
 
+  // Sequences
+  val sequence: Seq[Int] = Seq(1, 2, 3)
+  val accessedElementByIndex = sequence(2) // element at index 2
+  println(accessedElementByIndex) // 3
+
+  // Vectors are a particular type of sequences but very fast
+  val vector = Vector(1,2,3,10)
+
+  // Sets
+  val set = Set(1,2,1,2,3)
+  println(set) // Set(1,2,3)
+  val setHas5 = set.contains(5) // false
+  val addedSet = set + 5 // Set(1,2,3,5)
+  val subtractedSet = set - 1 // Set(2,3)
+
+  // Ranges
+  val range = 1 to 100 // [1,100]
+  val evenRange = range.filter(_ % 2 == 0) // [2,4,...,98, 100]
+  // Ranges are not actually a collection, but they retrieve the necessary information to represent the range
+  println(evenRange.toList) // So, they can be converted to collections like lists, seqs, sets
+
+  // Tuples
+  val tuple = ("Bon Jovi", "Rock", 1982)
+  // A tuple store multiple information (that can be of different types) on a singular element
+  println(tuple._1) // "Bon Jovi"
+  println(tuple._3) // 1982
+
+  // Maps
+  val phoneBook: Map[String, Int] = Map(
+    ("Daniel", 99928), // tuple notation
+    "Jane" -> 999481, // alternative syntax
+    "Manny" -> 12134
+  ) // They work as a collection of tuples indicating key-value pairs
 }
