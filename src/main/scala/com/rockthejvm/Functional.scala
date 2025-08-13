@@ -73,8 +73,9 @@ object Functional extends App {
   val sequence: Seq[Int] = Seq(1, 2, 3)
   val accessedElementByIndex = sequence(2) // element at index 2
   println(accessedElementByIndex) // 3
+  // Sequences are actually a trait for all ordered collections like lists or vectors
 
-  // Vectors are a particular type of sequences but very fast
+  // Vectors are a particular type of sequences (implementation of it) but very fast
   val vector = Vector(1,2,3,10)
 
   // Sets
