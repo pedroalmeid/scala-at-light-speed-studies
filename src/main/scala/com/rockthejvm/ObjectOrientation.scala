@@ -70,7 +70,6 @@ object ObjectOrientation extends App {
   }
   val n = MySingleton.apply(64)
   val n1 = MySingleton(64) // implicit call for "apply"
-  println(n, n1)
 
   object Animal { // Companion object
     // companions can access each other's private fields
